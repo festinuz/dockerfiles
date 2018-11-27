@@ -30,3 +30,4 @@ RUN curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-instal
     export PATH="/root/.pyenv/bin:$PATH" && \
     pyenv install $PYTHON_VERSION && \
     pyenv global $PYTHON_VERSION
+ENV PATH="/root/.pyenv/versions/${PYTHON_VERSION}/bin:${PATH}"
