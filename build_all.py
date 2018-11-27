@@ -1,7 +1,7 @@
 from typing import Dict
 from dataclasses import dataclass
 
-from build import build_docker_image
+from build import build_docker_image, push_docker_image
 
 
 NAME_PREFIX = "festinuz/"
@@ -45,3 +45,4 @@ for image_data in image_datas:
     print(f"Building: {image_data}")
     full_image_name = NAME_PREFIX + image_data.name
     build_docker_image(image_data.path, full_image_name, image_data.build_args)
+    push_docker_image(full_image_name)

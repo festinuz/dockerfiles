@@ -18,6 +18,11 @@ def build_docker_image(directory, image_name, build_args=None):
     subprocess.run(command.split(), stdout=sys.stdout)
 
 
+def push_docker_image(image_name):
+    command = f"docker push {image_name}"
+    subprocess.run(command.split(), stdout=sys.stdout)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("path", type=pathlib.Path, help="Path to 'Dockerfile' folder")
