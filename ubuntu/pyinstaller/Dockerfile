@@ -22,9 +22,12 @@ RUN apt-get update && apt-get install -y \
 
 
 # Install poetry <3
-RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python && \
-    source $HOME/.poetry/env && \
-    poetry config settings.virtualenvs.create false
+RUN curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+# Add poetry to path
+ENV PATH="/root/.poetry/bin:$PATH"
+# Config poetry
+RUN poetry config settings.virtualenvs.create false
+
 
 VOLUME /src
 WORKDIR /src
