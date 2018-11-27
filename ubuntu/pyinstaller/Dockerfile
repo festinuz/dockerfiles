@@ -2,38 +2,23 @@ ARG PREFIX
 ARG UBUNTU_VERSION
 ARG PYTHON_VERSION
 
-FROM ${PREFIX}ubuntu:${UBUNTU_VERSION}-python{$PYTHON_VERSION}
+FROM ${PREFIX}ubuntu:${UBUNTU_VERSION}-python$PYTHON_VERSION
 
 RUN apt-get update && apt-get install -y \
     bash \
-    build-base \
     curl \
-    freetype-dev \
-    fribidi-dev \
     g++ \
     gfortran \
     git \
-    harfbuzz-dev \
-    jpeg-dev \
-    lcms2-dev \
     libc-dev \
     libxml2-dev \
     libxslt-dev \
-    libzmq \
-    linux-headers \
     musl-dev \
-    openblas-dev \
-    openjpeg-dev \
     openssl \
-    pkgconfig \
-    postgresql-dev \
     pwgen \
     tcl-dev \
-    tiff-dev \
     tk-dev \
-    upx \
-    zeromq-dev \
-    zlib-dev
+    upx
 
 
 # Install poetry <3
