@@ -1,7 +1,7 @@
 ARG PREFIX
 ARG VERSION
 
-FROM $PREFIXubuntu:$VERSION
+FROM ${PREFIX}ubuntu:$VERSION
 
 
 
@@ -12,10 +12,6 @@ RUN apt-get update && apt-get install -y \
     unzip \
     xvfb
 
-
-# Install dumb-init (https://github.com/Yelp/dumb-init)
-RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 && \
-    chmod a+x /usr/local/bin/dumb-init
 
 # Set display port and dbus env to avoid hanging
 ENV DISPLAY=:99
