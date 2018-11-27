@@ -28,6 +28,6 @@ RUN apt-get update && apt-get install -y \
 # Install pyenv and required python version
 RUN curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash && \
     export PATH="/root/.pyenv/bin:$PATH" && \
-    pyenv install $PYTHON_VERSION && \
+    env PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install $PYTHON_VERSION && \
     pyenv global $PYTHON_VERSION
 ENV PATH="/root/.pyenv/versions/${PYTHON_VERSION}/bin:${PATH}"
