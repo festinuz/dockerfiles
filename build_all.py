@@ -29,7 +29,7 @@ for version in ["16.04"]:
     python = ImageData(
         path="ubuntu/python",
         name=f"ubuntu:{version}-python{python_version}",
-        build_args=dict(UBUNTU_VERSION=version),
+        build_args=dict(UBUNTU_VERSION=version, PYTHON_VERSION=python_version),
     )
     pyinstaller = ImageData(
         path="ubuntu/pyinstaller",
