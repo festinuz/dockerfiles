@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 if [ -f requirements.txt ]; then
     echo "requirements.txt file found; Installing dependencies with pip"
     pip install --no-cache-dir --disable-pip-version-check -r requirements.txt
